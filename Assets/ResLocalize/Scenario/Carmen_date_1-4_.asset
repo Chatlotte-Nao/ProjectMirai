@@ -1,0 +1,120 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 530a1e3ae93d4f5896baa8a3e6277169, type: 3}
+  m_Name: Carmen_date_1-4_
+  m_EditorClassIdentifier: 
+  commands:
+  - command: "\u4E8B\u4EF6\u540D"
+    args:
+    - "\u5F15\u65701"
+    - "\u5F15\u65702"
+    - "\u5F15\u65703"
+    - "\u5F15\u65704"
+    - "\u5F15\u65705"
+    - "\u5F15\u65706"
+    - "\u5F15\u65707"
+    - "\u6587\u672C"
+    - localize_key
+  - command: Scene
+    args:
+    - ADV
+    - 0
+  - command: call
+    args:
+    - Initialization
+    - ObjectDefinition01
+  - command: call
+    args:
+    - Initialization
+    - LayerSetting01
+  - command: SpriteFade
+    args:
+    - bg_black
+    - 0
+    - 0.3
+  - command: spritefade
+    args:
+    - Muta
+    - 0
+  - command: moveobject
+    args:
+    - Muta
+    - 0
+    - -5
+    - 0
+  - command: spritefade&
+    args:
+    - Muta
+    - 300
+    - 1
+  - command: moveobject
+    args:
+    - Muta
+    - 0
+    - 5
+    - 0
+    - 500
+  - command: loopmove
+    args:
+    - Muta
+    - 0
+    - 1
+    - 2000
+  - command: showmessage
+    args:
+    - 100
+  - command: Text
+    args:
+    - "\u59C6\u5854"
+    - adv_chara_Muta
+    - 0
+    - 4
+    - "\u78D4\u4EBA\u3002\n\u4F60\u8FD9\u662F\u53C8\u8981\u53BB\u96BE\u6C11\u8425\u5417\u59C6\uFF1F"
+    - Carmen_date_one_Carmen_date_1-4_1
+  - command: Text
+    args:
+    - "\u78D4\u4EBA"
+    - adv_chara_takuto
+    - 0
+    - 1
+    - "\u53EA\u6709\u7ECF\u5E38\u53BB\u624D\u80FD\u4E86\u89E3\u90A3\u91CC\u7684\u60C5\u51B5\u554A\u3002\n\u8C01\u53EB\u67D0\u4EBA\u53C8\u4E0D\u80AF\u597D\u597D\u62A5\u544A\u3002"
+    - Carmen_date_one_Carmen_date_1-4_2
+  - command: Text
+    args:
+    - "\u59C6\u5854"
+    - adv_chara_Muta
+    - 0
+    - 4
+    - "\u59C6\u59C6\u59C6\uFF01\n\u4F60\u5C31\u4E0D\u80FD\u4E0D\u7BA1\u96BE\u6C11\u561B\u59C6\uFF01"
+    - Carmen_date_one_Carmen_date_1-4_3
+  - command: Text
+    args:
+    - "\u59C6\u5854"
+    - adv_chara_Muta
+    - 0
+    - 4
+    - "\u594F\u8005\u5979\u4EEC\u90FD\u80FD\u591F\u533A\u5206\u7684\u5F88\u6E05\u695A\u7684\u59C6\u3002\n\u603B\u5F52\u6709\u5979\u4EEC\u5B88\u62A4\u4E0D\u4E86\u7684\u4E1C\u897F\u7684\u59C6\u3002"
+    - Carmen_date_one_Carmen_date_1-4_4
+  - command: Text
+    args:
+    - "\u59C6\u5854"
+    - adv_chara_Muta
+    - 0
+    - 4
+    - "\u50CF\u662F\u6708\u5149\u8FD8\u6709\u74E6\u5C14\u57FA\u91CC\uFF0C\u554A\uFF0C\u7279\u522B\u662F\u5361\u95E8\uFF0C\u5979\u53EF\u662F\u628A\u5BF9\u5F85\u96BE\u6C11\u7684\u5206\u5BF8\u628A\u63E1\u5F97\u5F88\u597D\u2026\u2026"
+    - Carmen_date_one_Carmen_date_1-4_5
+  - command: HideMessage
+    args: []
+  - command: call
+    args:
+    - Initialization
+    - Ending02

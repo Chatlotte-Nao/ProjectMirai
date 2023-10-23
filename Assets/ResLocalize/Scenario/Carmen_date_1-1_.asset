@@ -1,0 +1,205 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 530a1e3ae93d4f5896baa8a3e6277169, type: 3}
+  m_Name: Carmen_date_1-1_
+  m_EditorClassIdentifier: 
+  commands:
+  - command: "\u4E8B\u4EF6\u540D"
+    args:
+    - "\u5F15\u65701"
+    - "\u5F15\u65702"
+    - "\u5F15\u65703"
+    - "\u5F15\u65704"
+    - "\u5F15\u65705"
+    - "\u5F15\u65706"
+    - "\u5F15\u65707"
+    - "\u6587\u672C"
+    - localize_key
+  - command: Scene
+    args:
+    - ADV
+    - 0
+  - command: call
+    args:
+    - Initialization
+    - ObjectDefinition01
+  - command: call
+    args:
+    - Initialization
+    - LayerSetting01
+  - command: SpriteFade
+    args:
+    - bg_black
+    - 0
+    - 0.3
+  - command: ExploreState
+    args:
+    - 0
+  - command: startcinema
+    args: []
+  - command: showbg
+    args:
+    - bg_0008_01
+  - command: ScalingObject
+    args:
+    - bg_0008_01
+    - 1.5
+  - command: spritefade
+    args:
+    - Carmen
+    - 300
+    - 1
+  - command: moveobject
+    args:
+    - Carmen
+    - 0
+    - -1.19
+    - 0
+  - command: screenfade
+    args:
+    - 0
+  - command: showmessage
+    args:
+    - 100
+  - command: playspineanimation_body
+    args:
+    - Carmen
+    - "\u5361\u95E8_\u901A\u5E38_\u53CC\u624B\u62B1\u80F8"
+    - FALSE
+    - FALSE
+  - command: playspineanimation_face
+    args:
+    - Carmen
+    - "\u5361\u95E8_\u4E50\uFF08\u5C0F\uFF09"
+    - FALSE
+    - TRUE
+  - command: Text
+    args:
+    - "\u5361\u95E8"
+    - 4
+    - Carmen
+    - "\u4E00\u65E5\u4E4B\u9645\uFF0C\u59CB\u4E8E\u6C90\u6D74\u3002"
+    - Carmen_date_one_Carmen_date_1-1_1
+  - command: Text
+    args:
+    - "\u5361\u95E8"
+    - 4
+    - Carmen
+    - "\u5669\u68A6\u4E5F\u597D\uFF0C\u7F8E\u68A6\u4E5F\u7F62\uFF0C\u6240\u6709\u7684\u4E1C\u897F\u90FD\u4F1A\u968F\u7740\u6D41\u6C34\u800C\u53BB\u2026\u2026"
+    - Carmen_date_one_Carmen_date_1-1_2
+  - command: Text
+    args:
+    - "\u5361\u95E8"
+    - 4
+    - Carmen
+    - "\u7136\u540E\uFF0C\u518D\u4E3A\u539F\u539F\u672C\u672C\u7684\u81EA\u5DF1\uFF0C\u4ED4\u4ED4\u7EC6\u7EC6\u5730\uFF0C\u5316\u4E0A\u4E00\u4E2A\u5986\u3002"
+    - Carmen_date_one_Carmen_date_1-1_3
+  - command: HideMessage
+    args: []
+  - command: endcinema
+    args:
+    - 5000
+    - Linear
+  - command: MoveCamera&
+    args:
+    - Camera1
+    - 0
+    - -1.5
+    - 0
+    - 1500
+    - Linear
+  - command: MoveCamera
+    args:
+    - Camera2
+    - 0
+    - -1.5
+    - 0
+    - 1500
+    - Linear
+  - command: playspineanimation_body
+    args:
+    - Carmen
+    - "\u5361\u95E8_\u901A\u5E38_\u7247\u53C9\u8170"
+    - FALSE
+    - FALSE
+  - command: playspineanimation_face
+    args:
+    - Carmen
+    - "\u5361\u95E8_\u4E50\uFF08\u5C0F\uFF09"
+    - FALSE
+    - TRUE
+  - command: wait
+    args:
+    - 2000
+  - command: playspineanimation_body
+    args:
+    - Carmen
+    - "\u5361\u95E8_\u7247\u53C9\u8170_\u901A\u5E38"
+    - FALSE
+    - FALSE
+  - command: playspineanimation_body
+    args:
+    - Carmen
+    - "\u5361\u95E8_\u901A\u5E38_\u53CC\u624B\u62B1\u80F8"
+    - FALSE
+    - FALSE
+  - command: playspineanimation_face
+    args:
+    - Carmen
+    - "\u5361\u95E8_\u4E50\uFF08\u5C0F\uFF09"
+    - FALSE
+    - TRUE
+  - command: wait
+    args:
+    - 2000
+  - command: Text
+    args:
+    - "\u5361\u95E8"
+    - 4
+    - Carmen
+    - "\u2026\u2026\u8FD9\u6837\u4E00\u6765\uFF0C\u201C\u6211\u201D\u5C31\u5B8C\u6210\u4E86\u3002"
+    - Carmen_date_one_Carmen_date_1-1_4
+  - command: Text
+    args:
+    - "\u5361\u95E8"
+    - 4
+    - Carmen
+    - "\u6211\u662F\u5361\u95E8\u3002"
+    - Carmen_date_one_Carmen_date_1-1_5
+  - command: Text
+    args:
+    - "\u5361\u95E8"
+    - 4
+    - Carmen
+    - "\u80F8\u4E2D\u5145\u6EE1\u7740\u70ED\u60C5\uFF0C\u5916\u8868\u65E0\u6BD4\u70AB\u76EE\u7684\u594F\u8005\u3002"
+    - Carmen_date_one_Carmen_date_1-1_6
+  - command: Text
+    args:
+    - "\u5361\u95E8"
+    - 4
+    - 1
+    - Carmen
+    - musicart_04_emote_009
+    - "\u4ECA\u5929\uFF0C\u4E5F\u662F\u6211\u4F5C\u4E3A\u5361\u95E8\u800C\u6D3B\u7684\u4E00\u5929\u2026\u2026"
+    - Carmen_date_one_Carmen_date_1-1_7
+  - command: HideMessage
+    args: []
+  - command: HideObject
+    args:
+    - Carmen
+  - command: ExploreState
+    args:
+    - 1
+  - command: call
+    args:
+    - Initialization
+    - Ending02

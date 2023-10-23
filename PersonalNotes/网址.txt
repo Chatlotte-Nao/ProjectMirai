@@ -1,0 +1,5 @@
+https://www.nuget.org/packages/   里面包含各种DLL文件下载
+
+https://www.nuget.org/packages/NPOI/2.6.2   NPOI DLL下载(操控Excel)
+
+https://www.nuget.org/packages/EPPlus/7.0.0-rc1  EPPlus  DLL下载(操控Excel)

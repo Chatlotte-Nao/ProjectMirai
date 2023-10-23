@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 530a1e3ae93d4f5896baa8a3e6277169, type: 3}
+  m_Name: Carmen_date_1-5_
+  m_EditorClassIdentifier: 
+  commands:
+  - command: "\u4E8B\u4EF6\u540D"
+    args:
+    - "\u5F15\u65701"
+    - "\u5F15\u65702"
+    - "\u5F15\u65703"
+    - "\u5F15\u65704"
+    - "\u5F15\u65705"
+    - "\u5F15\u65706"
+    - "\u5F15\u65707"
+    - "\u6587\u672C"
+    - localize_key
+  - command: Scene
+    args:
+    - ADV
+    - 0
+  - command: call
+    args:
+    - Initialization
+    - ObjectDefinition01
+  - command: call
+    args:
+    - Initialization
+    - Ending02
