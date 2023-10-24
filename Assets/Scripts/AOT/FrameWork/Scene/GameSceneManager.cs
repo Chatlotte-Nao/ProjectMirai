@@ -20,7 +20,7 @@ public class GameSceneManager : Singleton<GameSceneManager>
         CurrentSceneName = sceneName;
         GameObject sceneGameObject = new GameObject(sceneName);
         T scene= sceneGameObject.AddComponent<T>();
-        await scene.InitAsync(param);
+        await scene.InitializeAsync(param);
         //TODO 进行UI界面的复原、对应Scene代码的处理等操作
         //TODO 结束掉加载界面
     }

@@ -10,7 +10,7 @@ public class BaseScene : MonoBehaviour
 {
     private Camera _mUICamera;
     
-    public virtual async UniTask InitAsync(object param = null)
+    public virtual async UniTask InitializeAsync(object param = null)
     {
         InitScene();
     }

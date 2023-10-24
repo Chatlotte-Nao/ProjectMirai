@@ -34,7 +34,7 @@ public class GameStart : MonoBehaviour
         if (startScene != null)
         {
             StartScene scene = startScene.GetComponent<StartScene>();
-            await scene.InitAsync();
+            await scene.InitializeAsync();
         }
     }
 }

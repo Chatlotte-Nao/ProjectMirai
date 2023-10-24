@@ -6,9 +6,9 @@ using UnityEngine;
 public class StartScene : BaseScene
 {
     [SerializeField] private UIButton Btn_GameStart;
-    public override async UniTask InitAsync(object param = null)
+    public override async UniTask InitializeAsync(object param = null)
     {
-        await base.InitAsync(param);
+        await base.InitializeAsync(param);
         Log.Debug("Load Start Scene");
         Btn_GameStart.onClick.SubscribeAsync(async () =>
         {
