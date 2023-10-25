@@ -5,16 +5,16 @@
 /// </summary>
 public class BattleManager : Singleton<BattleManager>
 {
-    public BattleFSM BattleFsm;
-    public void Init()
-    {
-        BattleFsm = new BattleFSM();
-        BattleFsm.InitState();
-    }
+    public BattleAdmin BattleAdmin { get;private set; }
 
-    public async UniTask RunBattleFsm()
+    public async UniTask InitializeAsync()
     {
-        await BattleFsm.RunFsm();
+        BattleAdmin = new BattleAdmin();
+    }
+    
+    public async UniTask<bool> StartBattle()
+    {
+        return await BattleAdmin.Run();
     }
 
     public async UniTask FinishBattle(bool IsWin)

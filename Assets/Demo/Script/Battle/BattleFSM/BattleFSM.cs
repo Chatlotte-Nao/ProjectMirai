@@ -38,11 +38,12 @@ public class BattleFSM
         _currentState = _preRoundPrepareState;
     }
 
-    public async UniTask<bool> RunFsm()
+    public async UniTask<bool> Run()
     {
         bool isWin = false;
         while (_currentState!=null)
         {
+            _currentState.ResetState();
             _currentState.OnEnterState();
             await _currentState.ExecuteTasks();
             _currentState.OnExitState();
