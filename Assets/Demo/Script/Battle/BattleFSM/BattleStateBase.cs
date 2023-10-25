@@ -11,16 +11,21 @@ public abstract class BattleStateBase
     
     public bool IsPause { get; private set; }
     
-    public int BattleStateID { get; private set; }
+    public BattleStateId BattleStateID { get; private set; }
 
-    protected abstract UniTask OnEnterState();
+    public abstract UniTask OnEnterState();
 
-    protected abstract UniTask OnExitState();
+    public abstract UniTask OnExitState();
     /// <summary>
     /// 在这一个状态执行的方法队列，遍历执行各个方法
     /// </summary>
     private Queue<Func<UniTask>> _tasks;
 
+    public BattleStateBase(BattleStateId battleStateId)
+    {
+        this.BattleStateID = battleStateId;
+    }
+    
     public virtual void ResetState()
     {
         IsReady = false;
@@ -60,10 +65,22 @@ public abstract class BattleStateBase
 
     protected void ReadyForNextState()
     {
+        //关闭自身State的ExecuteTasks行为
         IsReady = true;
     }
     
+    //将行为表示为命令Command
     
     
-    
+}
+
+public enum BattleStateId
+{
+    PreRoundPrepareState=0,
+    RoundStartState,
+    PlayerCommandState,
+    EnemyCommandState,
+    RoundEndState,
+    BattleVictoryState,
+    BattleFailState
 }
