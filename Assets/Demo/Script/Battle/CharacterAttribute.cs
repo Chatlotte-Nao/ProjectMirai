@@ -3,7 +3,7 @@
 /// <summary>
 /// 记录属性值、
 /// </summary>
-public class CharacterStatus
+public class CharacterAttribute
 {
     public int MaxDp => _maxDp;
     public int Dp => _dp;
@@ -56,7 +56,7 @@ public class CharacterStatus
     public List<long> AdditionalActiveSkillIds => _additionalActiveSkillIds;
     public List<long> PassiveSkillIds => _passiveSkillIds;
 
-    public CharacterStatus(InitCharacterModel model)
+    public CharacterAttribute(InitCharacterModel model)
     {
         _maxDp=model._maxDp;
         _dp=model._dp;
@@ -78,4 +78,45 @@ public class CharacterStatus
         _additionalActiveSkillIds = model.AdditionalActiveSkillIds;
         _passiveSkillIds = model.PassiveSkillIds;
     }
+
+    public void SetHp(int value)
+    {
+        _hp = value;
+    }
+
+    public void SetDp(int value)
+    {
+        _dp = value;
+    }
+
+    public void SetStr(int value)
+    {
+        _str = value;
+    }
+
+    public void SetDex(int value)
+    {
+        _dex = value;
+    }
+
+    public void SetCon(int value)
+    {
+        _con = value;
+    }
+
+    public void SetSpr(int value)
+    {
+        _spr = value;
+    }
+
+    public void SetWis(int value)
+    {
+        _wis = value;
+    }
+
+    public void SetLuk(int value)
+    {
+        _luk = value;
+    }
+    
 }
