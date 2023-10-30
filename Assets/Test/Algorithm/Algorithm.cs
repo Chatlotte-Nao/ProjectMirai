@@ -7,6 +7,19 @@ public class Algorithm : MonoBehaviour
 {
     private void Start()
     {
+        GraphNode nodeA = new GraphNode(1);
+        GraphNode nodeB = new GraphNode(2);
+        GraphNode nodeC = new GraphNode(3);
+        
+        nodeA.AddNeighbor(nodeB);
+        nodeA.AddNeighbor(nodeC);
+        nodeB.AddNeighbor(nodeC);
+
+        Graph graph = new Graph();
+        graph.AddNode(nodeA);
+        graph.AddNode(nodeB);
+        graph.AddNode(nodeC);
+        
         
     }
 
@@ -85,6 +98,72 @@ public class Algorithm : MonoBehaviour
 
         return -1;
     }
+
+    private void DepthFirstSearch(GraphNode startNode)
+    {
+        if (startNode == null)
+            return ;
+        startNode.IsVisited = true;
+        Debug.Log("Node Value Is:"+startNode.Data);
+        foreach (var item in startNode.Negihbors)
+        {
+            if (!item.IsVisited)
+            {
+                DepthFirstSearch(item);
+            }
+        }
+    }
+
+    private void BreadthFirstSearch(GraphNode startNode)
+    {
+        if(startNode==null)
+            return;
+        startNode.IsVisited = true;
+        Queue<GraphNode> queue = new Queue<GraphNode>();
+        
+        queue.Enqueue(startNode);
+
+        while (queue.Count>0)
+        {
+            var currentNode= queue.Dequeue();
+            Debug.Log("BFS Node Value:" + currentNode.Data);
+            foreach (var item in currentNode.Negihbors)
+            {
+                if (!item.IsVisited)
+                {
+                    queue.Enqueue(item);
+                    item.IsVisited = true;
+                }
+            }
+        }
+    }
     
 }
 
+
+public class GraphNode
+{
+    public int Data { get; }
+    public List<GraphNode> Negihbors { get; }
+    public bool IsVisited;
+    public GraphNode(int value)
+    {
+        Data = value;
+        Negihbors = new List<GraphNode>();
+    }
+
+    public void AddNeighbor(GraphNode graphNode)
+    {
+        Negihbors.Add(graphNode);
+    }
+}
+
+public class Graph
+{
+    public List<GraphNode> Nodes { get; }
+
+    public void AddNode(GraphNode graphNode)
+    {
+        Nodes.Add(graphNode);
+    }
+}
