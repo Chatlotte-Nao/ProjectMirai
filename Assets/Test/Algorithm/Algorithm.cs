@@ -141,6 +141,79 @@ public class Algorithm : MonoBehaviour
 }
 
 
+class DijkstraAlgorithm
+{
+    // 计算从起始节点到所有其他节点的最短路径
+    public static void Dijkstra(int[,] graph, int startNode)
+    {
+        int numNodes = graph.GetLength(0);
+        int[] shortestDistances = new int[numNodes];
+        bool[] visited = new bool[numNodes];
+
+        for (int i = 0; i < numNodes; i++)
+        {
+            shortestDistances[i] = int.MaxValue;
+            visited[i] = false;
+        }
+
+        shortestDistances[startNode] = 0;
+
+        for (int count = 0; count < numNodes - 1; count++)
+        {
+            int minDistance = int.MaxValue;
+            int minIndex = -1;
+
+            // 选择当前距离起始节点最小的节点
+            for (int node = 0; node < numNodes; node++)
+            {
+                if (!visited[node] && shortestDistances[node] < minDistance)
+                {
+                    minDistance = shortestDistances[node];
+                    minIndex = node;
+                }
+            }
+
+            visited[minIndex] = true;
+
+            // 更新邻接节点的最短路径距离
+            for (int node = 0; node < numNodes; node++)
+            {
+                if (!visited[node] && graph[minIndex, node] != 0 && shortestDistances[minIndex] != int.MaxValue &&
+                    shortestDistances[minIndex] + graph[minIndex, node] < shortestDistances[node])
+                {
+                    shortestDistances[node] = shortestDistances[minIndex] + graph[minIndex, node];
+                }
+            }
+        }
+
+        // 打印最短路径
+        Debug.Log("节点\t最短距离");
+        for (int i = 0; i < numNodes; i++)
+        {
+            Debug.Log($"{i}\t{shortestDistances[i]}");
+        }
+    }
+
+    static void Main(string[] args)
+    {
+        int[,] graph = {
+            {0, 4, 0, 0, 0, 0, 0, 8, 0},
+            {4, 0, 8, 0, 0, 0, 0, 11, 0},
+            {0, 8, 0, 7, 0, 4, 0, 0, 2},
+            {0, 0, 7, 0, 9, 14, 0, 0, 0},
+            {0, 0, 0, 9, 0, 10, 0, 0, 0},
+            {0, 0, 4, 14, 10, 0, 2, 0, 0},
+            {0, 0, 0, 0, 0, 2, 0, 1, 6},
+            {8, 11, 0, 0, 0, 0, 1, 0, 7},
+            {0, 0, 2, 0, 0, 0, 6, 7, 0}
+        };
+
+        Dijkstra(graph, 0);
+    }
+}
+
+
+
 public class GraphNode
 {
     public int Data { get; }
