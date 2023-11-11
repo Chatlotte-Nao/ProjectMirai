@@ -9,7 +9,7 @@ public class UIManager : Singleton<UIManager>
 
 
 
-    public async UniTask OpenUI(BaseUI baseUI)
+    public async UniTask OpenUI(string uiName)
     {
         
     }
