@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Algorithm : MonoBehaviour
 {
@@ -73,6 +74,75 @@ public class Algorithm : MonoBehaviour
 
         return i + 1;
     }
+    
+    public void MergeSort(int[] arr, int left, int right)
+    {
+        if (left < right)
+        {
+            int middle = (left + right) / 2;
+
+            // 递归排序左半部分
+            MergeSort(arr, left, middle);
+            // 递归排序右半部分
+            MergeSort(arr, middle + 1, right);
+
+            // 合并左右两部分
+            Merge(arr, left, middle, right);
+        }
+    }
+
+    private void Merge(int[] arr, int left, int middle, int right)
+    {
+        int n1 = middle - left + 1;
+        int n2 = right - middle;
+
+        int[] leftArray = new int[n1];
+        int[] rightArray = new int[n2];
+        int i = 0, j = 0;
+        // 复制数据到临时数组 leftArray 和 rightArray
+        for (i = 0; i < n1; i++)
+        {
+            leftArray[i] = arr[left + i];
+        }
+        for (j = 0; j < n2; j++)
+        {
+            rightArray[j] = arr[middle + 1 + j];
+        }
+
+        // 合并 leftArray 和 rightArray
+        int k = left;
+        i = 0;
+        j = 0;
+        while (i < n1 && j < n2)
+        {
+            if (leftArray[i] <= rightArray[j])
+            {
+                arr[k] = leftArray[i];
+                i++;
+            }
+            else
+            {
+                arr[k] = rightArray[j];
+                j++;
+            }
+            k++;
+        }
+
+        // 处理剩余元素
+        while (i < n1)
+        {
+            arr[k] = leftArray[i];
+            i++;
+            k++;
+        }
+        while (j < n2)
+        {
+            arr[k] = rightArray[j];
+            j++;
+            k++;
+        }
+    }
+
 
     private int BinarySearch(int[] arr,int target)
     {
@@ -185,7 +255,6 @@ class DijkstraAlgorithm
                 }
             }
         }
-
         // 打印最短路径
         Debug.Log("节点\t最短距离");
         for (int i = 0; i < numNodes; i++)

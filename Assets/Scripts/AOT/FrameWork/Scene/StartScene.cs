@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
+using UnityEngine.UI;
 
 public class StartScene : BaseScene
 {
@@ -18,7 +20,6 @@ public class StartScene : BaseScene
         {
             Log.Debug("Start Game");
         });
-        
         GuideTestBtn.onClick.SubscribeAsync(async () =>
         {
             Log.Debug("触发引导");
@@ -30,12 +31,17 @@ public class StartScene : BaseScene
     {
         Vector2 size = Vector2.Scale(buttonRect.rect.size, transform.lossyScale);
         var rect = new Rect((Vector2)buttonRect.position-(size * buttonRect.pivot), size);
-        var center = rect.center;
+        var center = buttonRect.rect.center;
         var uicamera = Camera.main;
         Vector2 centerScreen = uicamera.WorldToScreenPoint(center);
         RectTransformUtility.ScreenPointToLocalPointInRectangle(Trans_Canvas, centerScreen, uicamera, out Vector2 t);
-        Trans_FocusMask.anchoredPosition = t;
+        Trans_FocusMask.anchoredPosition = buttonRect.anchoredPosition;
         Trans_FocusMask.sizeDelta = buttonRect.rect.size * buttonRect.localScale;
 
+        BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions();
+        //buildPlayerOptions.locationPathName;
+        //BuildPipeline.BuildPlayer();
+        //AssetBundleManifest abm=BuildPipeline.BuildAssetBundles()
+        //LayoutGroup
     }
 }
