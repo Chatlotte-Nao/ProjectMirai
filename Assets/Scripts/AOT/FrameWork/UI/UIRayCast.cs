@@ -5,7 +5,7 @@ using UnityEngine.UI;
 /// <summary>
 /// 相当于空白图片，只需要它的射线检测功能
 /// </summary>
-public class UIRayCast : Image
+public class UIRayCast : Graphic
 {
     protected override void OnPopulateMesh(VertexHelper toFill)
     {
