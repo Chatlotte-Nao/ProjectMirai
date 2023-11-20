@@ -13,10 +13,10 @@ public class ResourceManager : Singleton<ResourceManager>
 
 
 
-    public async UniTask<GameObject> LoadPrefabAsync(string name,bool isAot=false)
+    public async UniTask<GameObject> LoadPrefabAsync(string prefabPath,bool isAot=false)
     {
 #if UNITY_EDITOR
-        GameObject go= AssetDatabase.LoadAssetAtPath<GameObject>(name);
+        GameObject go= AssetDatabase.LoadAssetAtPath<GameObject>(prefabPath);
         return go;
 #endif
     }

@@ -37,11 +37,5 @@ public class StartScene : BaseScene
         RectTransformUtility.ScreenPointToLocalPointInRectangle(Trans_Canvas, centerScreen, uicamera, out Vector2 t);
         Trans_FocusMask.anchoredPosition = buttonRect.anchoredPosition;
         Trans_FocusMask.sizeDelta = buttonRect.rect.size * buttonRect.localScale;
-
-        BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions();
-        //buildPlayerOptions.locationPathName;
-        //BuildPipeline.BuildPlayer();
-        //AssetBundleManifest abm=BuildPipeline.BuildAssetBundles()
-        //LayoutGroup
     }
 }

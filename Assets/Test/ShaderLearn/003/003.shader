@@ -3,6 +3,7 @@ Shader "Unlit/003"
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
+        _Color("Color",Color)=(1,1,1,1)
     }
     SubShader
     {
@@ -14,7 +15,8 @@ Shader "Unlit/003"
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
-
+            #include "UnityCG.cginc"
+            fixed4 _Color;
             struct a2f
             {
                 float4 vertext:POSITION;
@@ -40,7 +42,9 @@ Shader "Unlit/003"
 
 			fixed4 frag(v2f i):SV_Target
 			{
-				return fixed4(i.color,1);
+			    fixed3 c=i.color;
+			    c*=_Color.rgb;
+				return fixed4(c,1);
 			}
             ENDCG
         }

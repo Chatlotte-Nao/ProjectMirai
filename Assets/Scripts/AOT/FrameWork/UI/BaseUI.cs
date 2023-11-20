@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// UI界面的基类
 /// </summary>
-public class BaseUI
+public class BaseUI : MonoBehaviour
 {
     public virtual async UniTask InitializeAsync()
     {
