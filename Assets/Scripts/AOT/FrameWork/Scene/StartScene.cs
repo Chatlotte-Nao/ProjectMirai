@@ -16,15 +16,19 @@ public class StartScene : BaseScene
     {
         await base.InitializeAsync(param);
         Log.Debug("Load Start Scene");
-        Btn_GameStart.onClick.SubscribeAsync(async () =>
-        {
-            Log.Debug("Start Game");
-        });
-        GuideTestBtn.onClick.SubscribeAsync(async () =>
-        {
-            Log.Debug("触发引导");
-        });
-        SetFocusPosition(GuideTestBtn.GetComponent<RectTransform>());
+        // Btn_GameStart.onClick.SubscribeAsync(async () =>
+        // {
+        //     Log.Debug("Start Game");
+        // });
+        // GuideTestBtn.onClick.SubscribeAsync(async () =>
+        // {
+        //     Log.Debug("触发引导");
+        // });
+        // SetFocusPosition(GuideTestBtn.GetComponent<RectTransform>());
+        GameInitialize initialize = new GameInitialize();
+        await initialize.Initialize();
+        
+        
     }
 
     private void SetFocusPosition(RectTransform buttonRect)
