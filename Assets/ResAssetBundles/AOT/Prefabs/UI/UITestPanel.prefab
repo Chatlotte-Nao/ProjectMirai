@@ -114,7 +114,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1416795172718407091}
-  - component: {fileID: 8360350094969825821}
+  - component: {fileID: 3591421621358236459}
   m_Layer: 5
   m_Name: UITestPanel
   m_TagString: Untagged
@@ -144,7 +144,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &8360350094969825821
+--- !u!114 &3591421621358236459
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -156,6 +156,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75d090c45aa9423ebc84870caf92f443, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_aliases: []
+  m_objects:
+  - {fileID: 2800000, guid: 0e7057865c368044e98d63332c061f5e, type: 3}
 --- !u!1 &3882573121357054029
 GameObject:
   m_ObjectHideFlags: 0
